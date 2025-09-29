@@ -3,7 +3,7 @@
 # secretbin
 
 ```go
-import "github.com/Nihility-io/SecretBin-Go/v2"
+import "github.com/SecretBin-io/go-secretbin/v2"
 ```
 
 ## Index
@@ -75,7 +75,7 @@ var (
 ```
 
 <a name="GeneratePassword"></a>
-## func [GeneratePassword](<https://github.com/Nihility-io/SecretBin-Go/blob/main/password.go#L35>)
+## func [GeneratePassword](<https://github.com/SecretBin-io/go-secretbin/blob/main/password.go#L35>)
 
 ```go
 func GeneratePassword(options PasswordOptions) (string, error)
@@ -84,7 +84,7 @@ func GeneratePassword(options PasswordOptions) (string, error)
 GeneratePassword generates a secure random password based on the provided options. It ensures that at least one character from each selected set is included. If no character sets are selected or the length is below 6, it returns an error.
 
 <a name="Attachment"></a>
-## type [Attachment](<https://github.com/Nihility-io/SecretBin-Go/blob/main/content.go#L26-L30>)
+## type [Attachment](<https://github.com/SecretBin-io/go-secretbin/blob/main/content.go#L26-L30>)
 
 
 
@@ -97,7 +97,7 @@ type Attachment struct {
 ```
 
 <a name="Banner"></a>
-## type [Banner](<https://github.com/Nihility-io/SecretBin-Go/blob/main/config.go#L54-L57>)
+## type [Banner](<https://github.com/SecretBin-io/go-secretbin/blob/main/config.go#L54-L57>)
 
 
 
@@ -109,7 +109,7 @@ type Banner struct {
 ```
 
 <a name="Client"></a>
-## type [Client](<https://github.com/Nihility-io/SecretBin-Go/blob/main/secretbin.go#L13-L19>)
+## type [Client](<https://github.com/SecretBin-io/go-secretbin/blob/main/secretbin.go#L13-L19>)
 
 
 
@@ -124,7 +124,7 @@ type Client interface {
 ```
 
 <a name="New"></a>
-### func [New](<https://github.com/Nihility-io/SecretBin-Go/blob/main/secretbin.go#L29>)
+### func [New](<https://github.com/SecretBin-io/go-secretbin/blob/main/secretbin.go#L29>)
 
 ```go
 func New(endpoint string) (Client, error)
@@ -133,7 +133,7 @@ func New(endpoint string) (Client, error)
 New creates a new SecretBin client for the given endpoint. It retrieves the API information and configuration from the server to initialize the client.
 
 <a name="Config"></a>
-## type [Config](<https://github.com/Nihility-io/SecretBin-Go/blob/main/config.go#L12-L19>)
+## type [Config](<https://github.com/SecretBin-io/go-secretbin/blob/main/config.go#L12-L19>)
 
 
 
@@ -149,7 +149,7 @@ type Config struct {
 ```
 
 <a name="Config.ExpireOptionsSorted"></a>
-### func \(\*Config\) [ExpireOptionsSorted](<https://github.com/Nihility-io/SecretBin-Go/blob/main/config.go#L41>)
+### func \(\*Config\) [ExpireOptionsSorted](<https://github.com/SecretBin-io/go-secretbin/blob/main/config.go#L41>)
 
 ```go
 func (c *Config) ExpireOptionsSorted() []string
@@ -158,7 +158,7 @@ func (c *Config) ExpireOptionsSorted() []string
 ExpiresOptionsSorted returns a slice of expiration option names sorted by their duration.
 
 <a name="Config.ExpiresSorted"></a>
-### func \(\*Config\) [ExpiresSorted](<https://github.com/Nihility-io/SecretBin-Go/blob/main/config.go#L22>)
+### func \(\*Config\) [ExpiresSorted](<https://github.com/SecretBin-io/go-secretbin/blob/main/config.go#L22>)
 
 ```go
 func (c *Config) ExpiresSorted() iter.Seq2[string, Expires]
@@ -167,7 +167,7 @@ func (c *Config) ExpiresSorted() iter.Seq2[string, Expires]
 ExpiresSorted returns an iterator that yields expiration options sorted by their duration.
 
 <a name="Expires"></a>
-## type [Expires](<https://github.com/Nihility-io/SecretBin-Go/blob/main/config.go#L59-L63>)
+## type [Expires](<https://github.com/SecretBin-io/go-secretbin/blob/main/config.go#L59-L63>)
 
 
 
@@ -180,7 +180,7 @@ type Expires struct {
 ```
 
 <a name="Expires.String"></a>
-### func \(Expires\) [String](<https://github.com/Nihility-io/SecretBin-Go/blob/main/config.go#L66>)
+### func \(Expires\) [String](<https://github.com/SecretBin-io/go-secretbin/blob/main/config.go#L66>)
 
 ```go
 func (e Expires) String() string
@@ -189,7 +189,7 @@ func (e Expires) String() string
 String returns a human\-readable representation of the expiration option.
 
 <a name="Options"></a>
-## type [Options](<https://github.com/Nihility-io/SecretBin-Go/blob/main/secretbin.go#L67-L80>)
+## type [Options](<https://github.com/SecretBin-io/go-secretbin/blob/main/secretbin.go#L67-L80>)
 
 
 
@@ -211,7 +211,7 @@ type Options struct {
 ```
 
 <a name="PasswordOptions"></a>
-## type [PasswordOptions](<https://github.com/Nihility-io/SecretBin-Go/blob/main/password.go#L24-L30>)
+## type [PasswordOptions](<https://github.com/SecretBin-io/go-secretbin/blob/main/password.go#L24-L30>)
 
 PasswordOptions defines the options for generating a password.
 
@@ -226,7 +226,7 @@ type PasswordOptions struct {
 ```
 
 <a name="Secret"></a>
-## type [Secret](<https://github.com/Nihility-io/SecretBin-Go/blob/main/content.go#L21-L24>)
+## type [Secret](<https://github.com/SecretBin-io/go-secretbin/blob/main/content.go#L21-L24>)
 
 
 
@@ -238,7 +238,7 @@ type Secret struct {
 ```
 
 <a name="Secret.AddAttachment"></a>
-### func \(\*Secret\) [AddAttachment](<https://github.com/Nihility-io/SecretBin-Go/blob/main/content.go#L34>)
+### func \(\*Secret\) [AddAttachment](<https://github.com/SecretBin-io/go-secretbin/blob/main/content.go#L34>)
 
 ```go
 func (s *Secret) AddAttachment(name string, contentType string, data []byte)
@@ -247,7 +247,7 @@ func (s *Secret) AddAttachment(name string, contentType string, data []byte)
 AddAttachment adds an attachment to the secret content. If the content type is not provided, it will be guessed based on the file extension.
 
 <a name="Secret.AddFileAttachment"></a>
-### func \(\*Secret\) [AddFileAttachment](<https://github.com/Nihility-io/SecretBin-Go/blob/main/content.go#L52>)
+### func \(\*Secret\) [AddFileAttachment](<https://github.com/SecretBin-io/go-secretbin/blob/main/content.go#L52>)
 
 ```go
 func (s *Secret) AddFileAttachment(path string) error
@@ -256,7 +256,7 @@ func (s *Secret) AddFileAttachment(path string) error
 AddFileAttachment reads a file from the given path and adds it as an attachment to the secret content. The content type is guessed based on the file extension.
 
 <a name="SecretBinError"></a>
-## type [SecretBinError](<https://github.com/Nihility-io/SecretBin-Go/blob/main/error.go#L22-L26>)
+## type [SecretBinError](<https://github.com/SecretBin-io/go-secretbin/blob/main/error.go#L22-L26>)
 
 
 
@@ -269,7 +269,7 @@ type SecretBinError struct {
 ```
 
 <a name="SecretBinError.Error"></a>
-### func \(\*SecretBinError\) [Error](<https://github.com/Nihility-io/SecretBin-Go/blob/main/error.go#L29>)
+### func \(\*SecretBinError\) [Error](<https://github.com/SecretBin-io/go-secretbin/blob/main/error.go#L29>)
 
 ```go
 func (e *SecretBinError) Error() string
@@ -278,7 +278,7 @@ func (e *SecretBinError) Error() string
 Error marks the SecretBinError as an error type.
 
 <a name="SecretBinError.Is"></a>
-### func \(\*SecretBinError\) [Is](<https://github.com/Nihility-io/SecretBin-Go/blob/main/error.go#L34>)
+### func \(\*SecretBinError\) [Is](<https://github.com/SecretBin-io/go-secretbin/blob/main/error.go#L34>)
 
 ```go
 func (e *SecretBinError) Is(target error) bool

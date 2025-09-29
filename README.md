@@ -1,13 +1,18 @@
 # SecretBin-Go
-This module allows for automatic secret creation in [SecretBin](https://github.com/Nihility-io/SecretBin). Note however this module currently only support creating AES256-GCM secrets. XChaCha20 is currently not supported.
+
+This module allows for automatic secret creation in
+[SecretBin](https://github.com/SecretBin-io/SecretBin). Note however this module
+currently only support creating AES256-GCM secrets. XChaCha20 is currently not
+supported.
 
 ## Usage
-``` go
+
+```go
 package main
 
 import (
     "fmt"
-	secretbin "github.com/Nihility-io/SecretBin-Go/v2"
+	secretbin "github.com/SecretBin-io/go-secretbin/v2"
 )
 
 func main() {
