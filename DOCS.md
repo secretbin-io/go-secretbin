@@ -3,32 +3,31 @@
 # secretbin
 
 ```go
-import "github.com/SecretBin-io/go-secretbin/v2"
+import "github.com/secretbin-io/go-secretbin/v2"
 ```
 
 ## Index
 
-- [Constants](<#constants>)
-- [Variables](<#variables>)
-- [func GeneratePassword\(options PasswordOptions\) \(string, error\)](<#GeneratePassword>)
-- [type Attachment](<#Attachment>)
-- [type Banner](<#Banner>)
-- [type Client](<#Client>)
-  - [func New\(endpoint string\) \(Client, error\)](<#New>)
-- [type Config](<#Config>)
-  - [func \(c \*Config\) ExpireOptionsSorted\(\) \[\]string](<#Config.ExpireOptionsSorted>)
-  - [func \(c \*Config\) ExpiresSorted\(\) iter.Seq2\[string, Expires\]](<#Config.ExpiresSorted>)
-- [type Expires](<#Expires>)
-  - [func \(e Expires\) String\(\) string](<#Expires.String>)
-- [type Options](<#Options>)
-- [type PasswordOptions](<#PasswordOptions>)
-- [type Secret](<#Secret>)
-  - [func \(s \*Secret\) AddAttachment\(name string, contentType string, data \[\]byte\)](<#Secret.AddAttachment>)
-  - [func \(s \*Secret\) AddFileAttachment\(path string\) error](<#Secret.AddFileAttachment>)
-- [type SecretBinError](<#SecretBinError>)
-  - [func \(e \*SecretBinError\) Error\(\) string](<#SecretBinError.Error>)
-  - [func \(e \*SecretBinError\) Is\(target error\) bool](<#SecretBinError.Is>)
-
+- [Constants](#constants)
+- [Variables](#variables)
+- [func GeneratePassword\(options PasswordOptions\) \(string, error\)](#GeneratePassword)
+- [type Attachment](#Attachment)
+- [type Banner](#Banner)
+- [type Client](#Client)
+  - [func New\(endpoint string\) \(Client, error\)](#New)
+- [type Config](#Config)
+  - [func \(c \*Config\) ExpireOptionsSorted\(\) \[\]string](#Config.ExpireOptionsSorted)
+  - [func \(c \*Config\) ExpiresSorted\(\) iter.Seq2\[string, Expires\]](#Config.ExpiresSorted)
+- [type Expires](#Expires)
+  - [func \(e Expires\) String\(\) string](#Expires.String)
+- [type Options](#Options)
+- [type PasswordOptions](#PasswordOptions)
+- [type Secret](#Secret)
+  - [func \(s \*Secret\) AddAttachment\(name string, contentType string, data \[\]byte\)](#Secret.AddAttachment)
+  - [func \(s \*Secret\) AddFileAttachment\(path string\) error](#Secret.AddFileAttachment)
+- [type SecretBinError](#SecretBinError)
+  - [func \(e \*SecretBinError\) Error\(\) string](#SecretBinError.Error)
+  - [func \(e \*SecretBinError\) Is\(target error\) bool](#SecretBinError.Is)
 
 ## Constants
 
@@ -75,18 +74,21 @@ var (
 ```
 
 <a name="GeneratePassword"></a>
-## func [GeneratePassword](<https://github.com/SecretBin-io/go-secretbin/blob/main/password.go#L35>)
+
+## func [GeneratePassword](https://github.com/secretbin-io/go-secretbin/blob/main/password.go#L35)
 
 ```go
 func GeneratePassword(options PasswordOptions) (string, error)
 ```
 
-GeneratePassword generates a secure random password based on the provided options. It ensures that at least one character from each selected set is included. If no character sets are selected or the length is below 6, it returns an error.
+GeneratePassword generates a secure random password based on the provided
+options. It ensures that at least one character from each selected set is
+included. If no character sets are selected or the length is below 6, it returns
+an error.
 
 <a name="Attachment"></a>
-## type [Attachment](<https://github.com/SecretBin-io/go-secretbin/blob/main/content.go#L26-L30>)
 
-
+## type [Attachment](https://github.com/secretbin-io/go-secretbin/blob/main/content.go#L26-L30)
 
 ```go
 type Attachment struct {
@@ -97,9 +99,8 @@ type Attachment struct {
 ```
 
 <a name="Banner"></a>
-## type [Banner](<https://github.com/SecretBin-io/go-secretbin/blob/main/config.go#L54-L57>)
 
-
+## type [Banner](https://github.com/secretbin-io/go-secretbin/blob/main/config.go#L54-L57)
 
 ```go
 type Banner struct {
@@ -109,9 +110,8 @@ type Banner struct {
 ```
 
 <a name="Client"></a>
-## type [Client](<https://github.com/SecretBin-io/go-secretbin/blob/main/secretbin.go#L13-L19>)
 
-
+## type [Client](https://github.com/secretbin-io/go-secretbin/blob/main/secretbin.go#L13-L19)
 
 ```go
 type Client interface {
@@ -124,18 +124,19 @@ type Client interface {
 ```
 
 <a name="New"></a>
-### func [New](<https://github.com/SecretBin-io/go-secretbin/blob/main/secretbin.go#L29>)
+
+### func [New](https://github.com/secretbin-io/go-secretbin/blob/main/secretbin.go#L29)
 
 ```go
 func New(endpoint string) (Client, error)
 ```
 
-New creates a new SecretBin client for the given endpoint. It retrieves the API information and configuration from the server to initialize the client.
+New creates a new SecretBin client for the given endpoint. It retrieves the API
+information and configuration from the server to initialize the client.
 
 <a name="Config"></a>
-## type [Config](<https://github.com/SecretBin-io/go-secretbin/blob/main/config.go#L12-L19>)
 
-
+## type [Config](https://github.com/secretbin-io/go-secretbin/blob/main/config.go#L12-L19)
 
 ```go
 type Config struct {
@@ -149,27 +150,30 @@ type Config struct {
 ```
 
 <a name="Config.ExpireOptionsSorted"></a>
-### func \(\*Config\) [ExpireOptionsSorted](<https://github.com/SecretBin-io/go-secretbin/blob/main/config.go#L41>)
+
+### func \(\*Config\) [ExpireOptionsSorted](https://github.com/secretbin-io/go-secretbin/blob/main/config.go#L41)
 
 ```go
 func (c *Config) ExpireOptionsSorted() []string
 ```
 
-ExpiresOptionsSorted returns a slice of expiration option names sorted by their duration.
+ExpiresOptionsSorted returns a slice of expiration option names sorted by their
+duration.
 
 <a name="Config.ExpiresSorted"></a>
-### func \(\*Config\) [ExpiresSorted](<https://github.com/SecretBin-io/go-secretbin/blob/main/config.go#L22>)
+
+### func \(\*Config\) [ExpiresSorted](https://github.com/secretbin-io/go-secretbin/blob/main/config.go#L22)
 
 ```go
 func (c *Config) ExpiresSorted() iter.Seq2[string, Expires]
 ```
 
-ExpiresSorted returns an iterator that yields expiration options sorted by their duration.
+ExpiresSorted returns an iterator that yields expiration options sorted by their
+duration.
 
 <a name="Expires"></a>
-## type [Expires](<https://github.com/SecretBin-io/go-secretbin/blob/main/config.go#L59-L63>)
 
-
+## type [Expires](https://github.com/secretbin-io/go-secretbin/blob/main/config.go#L59-L63)
 
 ```go
 type Expires struct {
@@ -180,7 +184,8 @@ type Expires struct {
 ```
 
 <a name="Expires.String"></a>
-### func \(Expires\) [String](<https://github.com/SecretBin-io/go-secretbin/blob/main/config.go#L66>)
+
+### func \(Expires\) [String](https://github.com/secretbin-io/go-secretbin/blob/main/config.go#L66)
 
 ```go
 func (e Expires) String() string
@@ -189,9 +194,8 @@ func (e Expires) String() string
 String returns a human\-readable representation of the expiration option.
 
 <a name="Options"></a>
-## type [Options](<https://github.com/SecretBin-io/go-secretbin/blob/main/secretbin.go#L67-L80>)
 
-
+## type [Options](https://github.com/secretbin-io/go-secretbin/blob/main/secretbin.go#L67-L80)
 
 ```go
 type Options struct {
@@ -211,7 +215,8 @@ type Options struct {
 ```
 
 <a name="PasswordOptions"></a>
-## type [PasswordOptions](<https://github.com/SecretBin-io/go-secretbin/blob/main/password.go#L24-L30>)
+
+## type [PasswordOptions](https://github.com/secretbin-io/go-secretbin/blob/main/password.go#L24-L30)
 
 PasswordOptions defines the options for generating a password.
 
@@ -226,9 +231,8 @@ type PasswordOptions struct {
 ```
 
 <a name="Secret"></a>
-## type [Secret](<https://github.com/SecretBin-io/go-secretbin/blob/main/content.go#L21-L24>)
 
-
+## type [Secret](https://github.com/secretbin-io/go-secretbin/blob/main/content.go#L21-L24)
 
 ```go
 type Secret struct {
@@ -238,27 +242,30 @@ type Secret struct {
 ```
 
 <a name="Secret.AddAttachment"></a>
-### func \(\*Secret\) [AddAttachment](<https://github.com/SecretBin-io/go-secretbin/blob/main/content.go#L34>)
+
+### func \(\*Secret\) [AddAttachment](https://github.com/secretbin-io/go-secretbin/blob/main/content.go#L34)
 
 ```go
 func (s *Secret) AddAttachment(name string, contentType string, data []byte)
 ```
 
-AddAttachment adds an attachment to the secret content. If the content type is not provided, it will be guessed based on the file extension.
+AddAttachment adds an attachment to the secret content. If the content type is
+not provided, it will be guessed based on the file extension.
 
 <a name="Secret.AddFileAttachment"></a>
-### func \(\*Secret\) [AddFileAttachment](<https://github.com/SecretBin-io/go-secretbin/blob/main/content.go#L52>)
+
+### func \(\*Secret\) [AddFileAttachment](https://github.com/secretbin-io/go-secretbin/blob/main/content.go#L52)
 
 ```go
 func (s *Secret) AddFileAttachment(path string) error
 ```
 
-AddFileAttachment reads a file from the given path and adds it as an attachment to the secret content. The content type is guessed based on the file extension.
+AddFileAttachment reads a file from the given path and adds it as an attachment
+to the secret content. The content type is guessed based on the file extension.
 
 <a name="SecretBinError"></a>
-## type [SecretBinError](<https://github.com/SecretBin-io/go-secretbin/blob/main/error.go#L22-L26>)
 
-
+## type [SecretBinError](https://github.com/secretbin-io/go-secretbin/blob/main/error.go#L22-L26)
 
 ```go
 type SecretBinError struct {
@@ -269,7 +276,8 @@ type SecretBinError struct {
 ```
 
 <a name="SecretBinError.Error"></a>
-### func \(\*SecretBinError\) [Error](<https://github.com/SecretBin-io/go-secretbin/blob/main/error.go#L29>)
+
+### func \(\*SecretBinError\) [Error](https://github.com/secretbin-io/go-secretbin/blob/main/error.go#L29)
 
 ```go
 func (e *SecretBinError) Error() string
@@ -278,7 +286,8 @@ func (e *SecretBinError) Error() string
 Error marks the SecretBinError as an error type.
 
 <a name="SecretBinError.Is"></a>
-### func \(\*SecretBinError\) [Is](<https://github.com/SecretBin-io/go-secretbin/blob/main/error.go#L34>)
+
+### func \(\*SecretBinError\) [Is](https://github.com/secretbin-io/go-secretbin/blob/main/error.go#L34)
 
 ```go
 func (e *SecretBinError) Is(target error) bool
@@ -286,4 +295,4 @@ func (e *SecretBinError) Is(target error) bool
 
 Is checks if the error matches the target error.
 
-Generated by [gomarkdoc](<https://github.com/princjef/gomarkdoc>)
+Generated by [gomarkdoc](https://github.com/princjef/gomarkdoc)

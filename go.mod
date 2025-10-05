@@ -1,4 +1,4 @@
-module github.com/SecretBin-io/go-secretbin/v2
+module github.com/secretbin-io/go-secretbin/v2
 
 go 1.25.1
 
